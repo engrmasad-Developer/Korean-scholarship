@@ -1,0 +1,263 @@
+/* ============================================
+   CONTACT SECTION - Figma Match
+   White/light bg, laptop image left, form right
+   ============================================ */
+
+.contact {
+    background: #fff;
+    padding: 6rem 0;
+}
+
+.contact__title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #1a1a2e;
+    text-transform: uppercase;
+}
+
+.contact__title .text-purple {
+    color: #6d28d9;
+}
+
+.contact__subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 3.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+/* Form Wrapper Box */
+.contact__box {
+    border: 1px solid #c4b5fd;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    background: #fff;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2.5rem;
+    align-items: stretch;
+    /* image matches height */
+}
+
+/* Left: Image panel */
+.contact__image-panel {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.contact__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Right: Form */
+.contact__form-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 1rem;
+}
+
+.contact__form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.contact__form-row-half {
+    width: 50%;
+    padding-right: 0.75rem;
+    /* space if it were in a grid */
+}
+
+.contact__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact__label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.contact__input,
+.contact__textarea,
+.contact__select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: #fff;
+    border: 1px solid #c4b5fd;
+    border-radius: 6px;
+    color: #4b5563;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.contact__input::placeholder,
+.contact__textarea::placeholder {
+    color: #9ca3af;
+}
+
+.contact__input:focus,
+.contact__textarea:focus,
+.contact__select:focus {
+    outline: none;
+    border-color: #6d28d9;
+    box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.1);
+}
+
+.contact__input.error,
+.contact__textarea.error,
+.contact__select.error {
+    border-color: #ef4444;
+}
+
+.contact__select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236d28d9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+.contact__textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact__error {
+    font-size: 0.75rem;
+    color: #ef4444;
+}
+
+/* Radio buttons & text */
+.contact__visa-section {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.contact__radio-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    border: 1px solid transparent;
+}
+
+.contact__radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.contact__radio-label input[type="radio"] {
+    accent-color: #6d28d9;
+    width: 14px;
+    height: 14px;
+}
+
+.contact__visa-note {
+    font-size: 0.85rem;
+    color: #6b7280;
+    padding-bottom: 0.2rem;
+}
+
+.contact__visa-note .text-purple-bold {
+    color: #6d28d9;
+    font-weight: 600;
+}
+
+.contact__visa-note .text-purple-light {
+    color: #8b5cf6;
+}
+
+/* Centered exact button */
+.contact__submit-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.contact__submit {
+    min-width: 250px;
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #8b5cf6;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.contact__submit:hover {
+    background: #7c3aed;
+    transform: translateY(-1px);
+}
+
+.contact__success {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    color: #16a34a;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__image-panel {
+        display: none;
+        /* Hide image on mobile for better focus on form */
+    }
+
+    .contact__visa-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact__form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__form-row-half {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .contact__submit {
+        width: 100%;
+    }
+}

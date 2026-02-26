@@ -1,0 +1,167 @@
+/* ============================================
+   ACCOMMODATION SECTION - Figma Match
+   White Left, Large Right Image, Floating Card
+   ============================================ */
+
+.accommodation {
+    background: #ffffff;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.accommodation__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.accommodation__text-content {
+    max-width: 500px;
+}
+
+.accommodation__title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #1a1a2e;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.accommodation__title .text-purple {
+    color: var(--color-primary);
+}
+
+.accommodation__desc {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.8;
+}
+
+.accommodation__desc .text-purple {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* Visual Side */
+.accommodation__visual {
+    position: relative;
+    height: 600px;
+}
+
+.accommodation__image-container {
+    position: absolute;
+    top: 0;
+    right: -100px;
+    /* Extend off screen slightly */
+    width: 120%;
+    height: 100%;
+    border-radius: 40px 0 0 40px;
+    overflow: hidden;
+}
+
+.accommodation__image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=2069&auto=format&fit=crop') center/cover no-repeat;
+    background-color: #f3f4f6;
+}
+
+/* Floating Card */
+.accommodation__card {
+    position: absolute;
+    bottom: 50px;
+    left: -50px;
+    background: #ffffff;
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    z-index: 2;
+    max-width: 90%;
+}
+
+.accommodation__features {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accommodation__feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    text-transform: uppercase;
+}
+
+.accommodation__feature .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-primary);
+    border-radius: 50%;
+}
+
+.accommodation__btn {
+    background: var(--color-primary);
+    color: #ffffff;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+
+.accommodation__btn:hover {
+    background: var(--color-primary-dark);
+}
+
+@media (max-width: 1024px) {
+    .accommodation__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .accommodation__visual {
+        height: 400px;
+    }
+
+    .accommodation__image-container {
+        position: relative;
+        right: 0;
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .accommodation__card {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: -50px;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: calc(100% - 2rem);
+        margin-left: 1rem;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .accommodation__features {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+
+}

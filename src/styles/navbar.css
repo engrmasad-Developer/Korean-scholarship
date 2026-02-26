@@ -1,0 +1,237 @@
+/* ============================================
+   NAVBAR - Figma Match
+   ============================================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 80px;
+    /* Taller navbar */
+    background: #ffffff;
+    transition: background var(--transition-base);
+}
+
+.navbar.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* Logo */
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+/* Assuming logo might be an image in the screenshot, but keeping text for now with dark colors */
+.navbar__logo-icon {
+    display: none;
+    /* Screenshot doesn't show the boxed B icon clearly, removing for cleaner look or will replace */
+}
+
+.navbar__logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbar__logo-text .logo-sub {
+    display: none;
+    /* Simpler logo in screenshot */
+}
+
+/* Desktop nav links */
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    /* Wider spacing */
+    margin-left: auto;
+    /* Push to right */
+    margin-right: 3rem;
+}
+
+.navbar__link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    text-transform: uppercase;
+    font-family: var(--font-family);
+    transition: color 0.2s ease;
+    letter-spacing: 0.02em;
+}
+
+.navbar__link:hover {
+    color: var(--color-primary);
+}
+
+.navbar__download-btn {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--gradient-primary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--font-family);
+    transition: all 0.2s ease;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow-purple);
+}
+
+.navbar__download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(108, 43, 217, 0.4);
+}
+
+.navbar__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Apply/Talk to Us Button */
+.navbar__apply-btn {
+    padding: 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background: none;
+    color: var(--color-primary);
+    /* Purple text */
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+.navbar__apply-btn::after {
+    content: '↗';
+    /* Arrow icon */
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.navbar__apply-btn:hover {
+    text-decoration: underline;
+}
+
+/* Hamburger */
+.navbar__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.navbar__hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #1a1a1a;
+    /* Dark bars */
+    border-radius: 99px;
+    transition: all var(--transition-base);
+}
+
+.navbar__hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile overlay */
+.navbar__mobile-menu {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base);
+}
+
+.navbar__mobile-menu.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.navbar__mobile-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-family);
+}
+
+.navbar__download-btn-mobile {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--gradient-primary);
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--font-family);
+    box-shadow: var(--shadow-purple);
+}
+
+@media (max-width: 900px) {
+    .navbar__menu {
+        display: none;
+    }
+
+    .navbar__hamburger {
+        display: flex;
+    }
+
+    .navbar__mobile-menu {
+        display: flex;
+    }
+}

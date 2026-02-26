@@ -1,0 +1,183 @@
+/* ============================================
+   ELIGIBILITY SECTION - Figma Match
+   White/Purple Theme with "Tabs" design
+   ============================================ */
+
+.eligibility {
+    background: #ffffff;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Purple decorative shape on right - Large sweep */
+.eligibility::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+    clip-path: ellipse(100% 100% at 100% 50%);
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Purple Side Curve */
+.eligibility::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: #8b5cf6;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.eligibility .container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eligibility__title {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1f2937;
+    text-transform: uppercase;
+}
+
+.eligibility__title .text-purple {
+    color: var(--color-primary);
+}
+
+.eligibility__interactive-area {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Tabs */
+.eligibility__tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0;
+    /* Connected to card */
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.eligibility__tab {
+    padding: 0.8rem 1.5rem;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    font-family: var(--font-family);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.eligibility__tab:hover {
+    background: #f9fafb;
+    color: var(--color-primary-dark);
+}
+
+.eligibility__tab.active {
+    background: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary);
+    transform: translateY(1px);
+    /* Connect to card */
+}
+
+/* White content card */
+.eligibility__card {
+    background: #ffffff;
+    border-radius: 0 16px 16px 16px;
+    /* First tab connects */
+    padding: 3rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 20px rgba(139, 92, 246, 0.15);
+    border: 1px solid #e5e7eb;
+    position: relative;
+    /* Adjust border radius if first tab is active vs others? 
+       For simplicity, just use rounded corners on bottom and top-right.
+    */
+    border-top-left-radius: 0;
+}
+
+/* Fix corner if first tab is NOT active? 
+   No, to keep it simple, we'll just have rounded corners everywhere 
+   and float the tabs above. 
+*/
+.eligibility__card {
+    border-radius: 16px;
+    border-top-left-radius: 0;
+}
+
+.eligibility__card-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+.eligibility__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.eligibility__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 1.05rem;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.eligibility__bullet {
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+@media (max-width: 768px) {
+    .eligibility::before {
+        display: none;
+    }
+
+    .eligibility__tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .eligibility__tab {
+        width: 100%;
+        border-radius: 8px;
+        text-align: center;
+        border-bottom: 1px solid #d1d5db;
+    }
+
+    .eligibility__card {
+        border-radius: 16px;
+    }
+}

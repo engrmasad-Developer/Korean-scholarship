@@ -1,0 +1,155 @@
+/* ============================================
+   BENEFITS SECTION - Figma Match
+   White/Purple Theme, Slider
+   ============================================ */
+
+.benefits {
+    background: #ffffff;
+    padding: 6rem 0;
+}
+
+.benefits__title {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #1a1a2e;
+    text-transform: uppercase;
+}
+
+.benefits__title .text-purple {
+    color: var(--color-primary);
+}
+
+.benefits__slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem;
+    border: 1px solid #7c3aed;
+    /* Purple Border */
+    border-radius: 20px;
+    background: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 500px;
+}
+
+.benefits__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    height: 100%;
+}
+
+.benefits__headline {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #1a1a2e;
+    margin-bottom: 3rem;
+}
+
+.benefits__headline .text-purple {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.benefits__sub-headline {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.benefits__desc {
+    font-size: 1rem;
+    color: #4b5563;
+    line-height: 1.6;
+    max-width: 450px;
+}
+
+.benefits__controls {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.benefits__arrow {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #7c3aed;
+    background: transparent;
+    color: #7c3aed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.benefits__arrow:hover {
+    background: #7c3aed;
+    color: #ffffff;
+}
+
+.benefits__image-container {
+    flex: 1;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.benefits__image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2664&auto=format&fit=crop') center/cover no-repeat;
+    /* Fallback color */
+    background-color: #ddd;
+}
+
+/* Slide animation */
+.benefits__slide-animations {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .benefits__slider {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        border: none;
+    }
+
+    .benefits__content {
+        align-items: center;
+        padding: 0;
+    }
+
+    .benefits__controls {
+        justify-content: center;
+    }
+
+    .benefits__image-container {
+        width: 100%;
+        height: 300px;
+        order: -1;
+    }
+}

@@ -1,0 +1,184 @@
+/* ============================================
+   HERO SECTION - Screenshot Matching
+   ============================================ */
+
+.hero {
+    background: #ffffff;
+    padding: var(--space-md) 0 var(--space-3xl);
+    position: relative;
+    /* overflow: visible; allow stats to render properly */
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* Ensure container has width constraints for the card */
+}
+
+/* The Main Dark Card */
+.hero__card {
+    /* Image background with dark overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+    /* Fallback */
+    background-color: #2e2e48;
+
+    border-radius: 50px;
+    /* Uniform large radius */
+
+    padding: 6rem 5rem;
+    position: relative;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* overflow: hidden;  <-- REMOVED so stats overlay can sit on top if needed, though we will position inside */
+}
+
+.hero__content {
+    max-width: 800px;
+    z-index: 2;
+    margin-top: -50px;
+    /* Slight visual adjustment */
+}
+
+.hero__title {
+    font-size: 4.5rem;
+    /* Larger font */
+    font-weight: 800;
+    /* Extra bold */
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    /* Explicitly use clean sans */
+    letter-spacing: -0.01em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero__cta-btn {
+    background: #ffffff;
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+}
+
+.hero__cta-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* 
+   THE MAGIC INVERTED CURVE 
+   Strategy: A div positioned at bottom right of the .hero__card
+   Background: White (same as page background)
+   Border-Top-Left-Radius: Large (100px)
+   This "covers" the image and creates the inverted curve look.
+*/
+.hero__stats-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 65%;
+    /* Adjust width as needed */
+    height: 180px;
+    /* Adjust height for the curve depth */
+    background: #ffffff;
+    border-top-left-radius: 100px;
+    /* The Curve */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 3rem 0 5rem;
+    /* Padding to push content away from curve */
+    z-index: 10;
+}
+
+.hero__stat-item {
+    text-align: left;
+}
+
+.hero__stat-title {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    /* Purple */
+    font-weight: 400;
+    /* Thin/Light look from screenshot */
+    margin-bottom: 0.25rem;
+    font-family: var(--font-family);
+}
+
+.hero__stat-desc {
+    font-size: 1.1rem;
+    color: var(--color-primary-light);
+    /* Lighter purple/gray */
+    line-height: 1.3;
+    font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .hero__title {
+        font-size: 3.5rem;
+    }
+
+    .hero__stats-overlay {
+        width: 75%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero__card {
+        min-height: auto;
+        padding-bottom: 220px;
+        /* Make space for stats */
+    }
+
+    .hero__stats-overlay {
+        width: 90%;
+        height: auto;
+        padding: 2rem 2rem;
+        flex-wrap: wrap;
+        gap: 2rem;
+        border-top-left-radius: 60px;
+    }
+
+    .hero__title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero__card {
+        padding: 3rem 1.5rem 14rem 1.5rem;
+        /* Space for stacked stats */
+        border-radius: 30px;
+    }
+
+    .hero__title {
+        font-size: 2.2rem;
+    }
+
+    .hero__stats-overlay {
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        /* Make it symmetric on mobile */
+        justify-content: center;
+    }
+
+    .hero__stat-item {
+        text-align: center;
+        flex: 1 1 100%;
+    }
+}
